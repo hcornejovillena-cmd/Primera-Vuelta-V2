@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Cornejo, Hugo">
+
+<title>Proyección Bayesiana — Primera Vuelta Presidencial Perú 2026</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="analisis_electoral_peru_2026_files/libs/clipboard/clipboard.min.js"></script>
+<script src="analisis_electoral_peru_2026_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="analisis_electoral_peru_2026_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="analisis_electoral_peru_2026_files/libs/quarto-html/popper.min.js"></script>
+<script src="analisis_electoral_peru_2026_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="analisis_electoral_peru_2026_files/libs/quarto-html/anchor.min.js"></script>
+<link href="analisis_electoral_peru_2026_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="analisis_electoral_peru_2026_files/libs/quarto-html/quarto-syntax-highlighting-a06763021a52c43c40a351ac8b799b8f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="analisis_electoral_peru_2026_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="analisis_electoral_peru_2026_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="analisis_electoral_peru_2026_files/libs/bootstrap/bootstrap-f57a4283c55baea7e81cb02c48ccb52d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="analisis_electoral_peru_2026_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="analisis_electoral_peru_2026_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#contexto-y-punto-de-corte-del-análisis" id="toc-contexto-y-punto-de-corte-del-análisis" class="nav-link active" data-scroll-target="#contexto-y-punto-de-corte-del-análisis"><span class="header-section-number">1</span> Contexto y punto de corte del análisis</a></li>
+  <li><a href="#datos" id="toc-datos" class="nav-link" data-scroll-target="#datos"><span class="header-section-number">2</span> Datos</a>
+  <ul class="collapse">
+  <li><a href="#escrutinio-onpe-al-86.0-7-candidatos-principales" id="toc-escrutinio-onpe-al-86.0-7-candidatos-principales" class="nav-link" data-scroll-target="#escrutinio-onpe-al-86.0-7-candidatos-principales"><span class="header-section-number">2.1</span> Escrutinio ONPE al 86.0 % — 7 candidatos principales</a></li>
+  <li><a href="#candidatos-con-menor-probabilidad-de-segunda-vuelta" id="toc-candidatos-con-menor-probabilidad-de-segunda-vuelta" class="nav-link" data-scroll-target="#candidatos-con-menor-probabilidad-de-segunda-vuelta"><span class="header-section-number">2.2</span> Candidatos con menor probabilidad de segunda vuelta</a></li>
+  <li><a href="#conteos-rápidos-de-referencia" id="toc-conteos-rápidos-de-referencia" class="nav-link" data-scroll-target="#conteos-rápidos-de-referencia"><span class="header-section-number">2.3</span> Conteos rápidos de referencia</a></li>
+  </ul></li>
+  <li><a href="#modelo-bayesiano-de-corrección-de-sesgo" id="toc-modelo-bayesiano-de-corrección-de-sesgo" class="nav-link" data-scroll-target="#modelo-bayesiano-de-corrección-de-sesgo"><span class="header-section-number">3</span> Modelo bayesiano de corrección de sesgo</a>
+  <ul class="collapse">
+  <li><a href="#hipótesis-de-orden-de-llegada-de-actas" id="toc-hipótesis-de-orden-de-llegada-de-actas" class="nav-link" data-scroll-target="#hipótesis-de-orden-de-llegada-de-actas"><span class="header-section-number">3.1</span> Hipótesis de orden de llegada de actas</a></li>
+  <li><a href="#regresión-por-mínimos-cuadrados-ponderados-wls" id="toc-regresión-por-mínimos-cuadrados-ponderados-wls" class="nav-link" data-scroll-target="#regresión-por-mínimos-cuadrados-ponderados-wls"><span class="header-section-number">3.2</span> Regresión por mínimos cuadrados ponderados (WLS)</a></li>
+  <li><a href="#proyección-de-votos-faltantes" id="toc-proyección-de-votos-faltantes" class="nav-link" data-scroll-target="#proyección-de-votos-faltantes"><span class="header-section-number">3.3</span> Proyección de votos faltantes</a></li>
+  <li><a href="#intervalos-de-confianza-por-bootstrap" id="toc-intervalos-de-confianza-por-bootstrap" class="nav-link" data-scroll-target="#intervalos-de-confianza-por-bootstrap"><span class="header-section-number">3.4</span> Intervalos de confianza por bootstrap</a></li>
+  </ul></li>
+  <li><a href="#validación-contra-conteos-rápidos" id="toc-validación-contra-conteos-rápidos" class="nav-link" data-scroll-target="#validación-contra-conteos-rápidos"><span class="header-section-number">4</span> Validación contra conteos rápidos</a></li>
+  <li><a href="#resultados-y-conclusiones" id="toc-resultados-y-conclusiones" class="nav-link" data-scroll-target="#resultados-y-conclusiones"><span class="header-section-number">5</span> Resultados y conclusiones</a>
+  <ul class="collapse">
+  <li><a href="#proyección-final" id="toc-proyección-final" class="nav-link" data-scroll-target="#proyección-final"><span class="header-section-number">5.1</span> Proyección final</a></li>
+  <li><a href="#síntesis-de-hallazgos" id="toc-síntesis-de-hallazgos" class="nav-link" data-scroll-target="#síntesis-de-hallazgos"><span class="header-section-number">5.2</span> Síntesis de hallazgos</a></li>
+  </ul></li>
+  <li><a href="#limitaciones-del-modelo" id="toc-limitaciones-del-modelo" class="nav-link" data-scroll-target="#limitaciones-del-modelo"><span class="header-section-number">6</span> Limitaciones del modelo</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Proyección Bayesiana — Primera Vuelta Presidencial Perú 2026</h1>
+<p class="subtitle lead">Corrección de sesgo urbano-rural en el escrutinio parcial · Validación con conteos rápidos Ipsos/Transparencia y Datum/América</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Cornejo, Hugo </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">15 de abril de 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="contexto-y-punto-de-corte-del-análisis" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Contexto y punto de corte del análisis</h1>
+<p>El presente análisis se realiza sobre el <strong>escrutinio parcial publicado por la ONPE el 14 de abril de 2026 al 86.0 % de actas</strong>, correspondiente a la primera vuelta de las Elecciones Generales. Se trata de un corte intermedio del escrutinio, no del cierre del día.</p>
+<p>A ese momento, los resultados mostraban a Keiko Fujimori (Fuerza Popular) en primer lugar con 16.84 % del total de votos válidos, seguida de López Aliaga (Renovación Popular, 12.12 %), Sánchez (Juntos por el Perú, 11.58 %), Nieto (Partido del Buen Gobierno, 11.29 %), Belmont (Partido Cívico Obras, 10.15 %), Álvarez (País para Todos, 7.87 %) y López Chau (Ahora Nación, 7.47 %).</p>
+<p>Estos porcentajes, calculados sobre el universo completo de votos válidos, son directamente comparables con los conteos rápidos disponibles:</p>
+<ul>
+<li><strong>Ipsos/Transparencia</strong> (1,037 actas, al 95.7 %, NC 95 %): Keiko 17.1 %, Sánchez 12.4 %, Aliaga 11.3 %, Nieto 10.7 %, Belmont 10.2 %, Álvarez 8.0 %, López Chau 7.4 %.</li>
+<li><strong>Datum/América TV</strong> (317,768 votos válidos, muestreo aleatorio): Keiko 16.8 %, Aliaga 12.9 %, Nieto 11.6 %, Belmont 10.1 %, Sánchez 9.4 %, Álvarez 8.1 %, López Chau 7.7 %.</li>
+</ul>
+<p>La brecha entre el escrutinio parcial y los conteos rápidos responde a un <strong>sesgo sistemático de orden de llegada de actas</strong>: las mesas urbanas —con mayor conectividad— transmiten sus resultados antes que las rurales, sesgando el escrutinio acumulado hacia el perfil de voto urbano.</p>
+<blockquote class="blockquote">
+<p><strong>Nota sobre el voto en el extranjero.</strong> Al momento del corte, el escrutinio exterior cubría el 31.1 % de las actas, con 83,663 votos computados de los 86,179 asistentes reales. Los votos pendientes en el exterior son únicamente <strong>2,516</strong>, por lo que su impacto en la proyección final es marginal.</p>
+</blockquote>
+<hr>
+</section>
+<section id="datos" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Datos</h1>
+<section id="escrutinio-onpe-al-86.0-7-candidatos-principales" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="escrutinio-onpe-al-86.0-7-candidatos-principales"><span class="header-section-number">2.1</span> Escrutinio ONPE al 86.0 % — 7 candidatos principales</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar código R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>escrutinio <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>dpto,           <span class="sc">~</span>KEIKO,   <span class="sc">~</span>ALIAGA,  <span class="sc">~</span>NIETO,  <span class="sc">~</span>SANCHEZ,  <span class="sc">~</span>BELMONT, <span class="sc">~</span>ALVAREZ, <span class="sc">~</span>LOPEZCHAU, <span class="sc">~</span>actas,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AMAZONAS"</span>,       <span class="dv">22605</span>,     <span class="dv">4770</span>,    <span class="dv">4996</span>,    <span class="dv">37556</span>,    <span class="dv">13605</span>,    <span class="dv">3291</span>,     <span class="dv">7773</span>, <span class="fl">0.68388</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ANCASH"</span>,         <span class="dv">80982</span>,    <span class="dv">27235</span>,   <span class="dv">33683</span>,    <span class="dv">70311</span>,    <span class="dv">46113</span>,   <span class="dv">45240</span>,    <span class="dv">41084</span>, <span class="fl">0.84706</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"APURIMAC"</span>,       <span class="dv">12572</span>,     <span class="dv">5808</span>,    <span class="dv">6835</span>,    <span class="dv">73366</span>,    <span class="dv">25639</span>,    <span class="dv">2686</span>,    <span class="dv">19723</span>, <span class="fl">0.89749</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AREQUIPA"</span>,       <span class="dv">61941</span>,    <span class="dv">90389</span>,  <span class="dv">157720</span>,    <span class="dv">85097</span>,    <span class="dv">92257</span>,   <span class="dv">70384</span>,    <span class="dv">78673</span>, <span class="fl">0.96014</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AYACUCHO"</span>,       <span class="dv">21661</span>,     <span class="dv">7363</span>,   <span class="dv">14961</span>,    <span class="dv">82829</span>,    <span class="dv">38578</span>,    <span class="dv">6214</span>,    <span class="dv">38946</span>, <span class="fl">0.93684</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CAJAMARCA"</span>,      <span class="dv">70739</span>,    <span class="dv">17551</span>,   <span class="dv">25014</span>,   <span class="dv">215587</span>,    <span class="dv">57591</span>,   <span class="dv">16468</span>,    <span class="dv">23757</span>, <span class="fl">0.77382</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CALLAO"</span>,        <span class="dv">113765</span>,    <span class="dv">82645</span>,   <span class="dv">82779</span>,    <span class="dv">16503</span>,    <span class="dv">44797</span>,   <span class="dv">66679</span>,    <span class="dv">32730</span>, <span class="fl">0.95031</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CUSCO"</span>,          <span class="dv">38793</span>,    <span class="dv">31378</span>,   <span class="dv">59163</span>,   <span class="dv">141194</span>,    <span class="dv">99351</span>,   <span class="dv">19057</span>,    <span class="dv">95660</span>, <span class="fl">0.91162</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"HUANCAVELICA"</span>,   <span class="dv">11371</span>,     <span class="dv">3789</span>,    <span class="dv">5253</span>,    <span class="dv">70093</span>,    <span class="dv">21824</span>,    <span class="dv">2788</span>,    <span class="dv">15085</span>, <span class="fl">0.93166</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"HUANUCO"</span>,        <span class="dv">46189</span>,    <span class="dv">18262</span>,   <span class="dv">14503</span>,    <span class="dv">88140</span>,    <span class="dv">43020</span>,   <span class="dv">16961</span>,    <span class="dv">18157</span>, <span class="fl">0.86373</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ICA"</span>,            <span class="dv">66039</span>,    <span class="dv">32231</span>,   <span class="dv">33094</span>,    <span class="dv">24499</span>,    <span class="dv">33599</span>,   <span class="dv">38543</span>,    <span class="dv">21757</span>, <span class="fl">0.66926</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"JUNIN"</span>,          <span class="dv">97692</span>,    <span class="dv">45108</span>,   <span class="dv">48048</span>,    <span class="dv">66976</span>,    <span class="dv">63525</span>,   <span class="dv">43092</span>,    <span class="dv">65663</span>, <span class="fl">0.89488</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LA LIBERTAD"</span>,   <span class="dv">168356</span>,    <span class="dv">69779</span>,   <span class="dv">82633</span>,    <span class="dv">78044</span>,    <span class="dv">59005</span>,   <span class="dv">66325</span>,    <span class="dv">34196</span>, <span class="fl">0.89155</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LAMBAYEQUE"</span>,    <span class="dv">160469</span>,    <span class="dv">53673</span>,   <span class="dv">64337</span>,    <span class="dv">62162</span>,    <span class="dv">44619</span>,   <span class="dv">57673</span>,    <span class="dv">27463</span>, <span class="fl">0.90669</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LIMA"</span>,         <span class="dv">1002078</span>,  <span class="dv">1124705</span>,  <span class="dv">848859</span>,   <span class="dv">182927</span>,   <span class="dv">512699</span>,  <span class="dv">500455</span>,   <span class="dv">385598</span>, <span class="fl">0.92126</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LORETO"</span>,         <span class="dv">77460</span>,    <span class="dv">18850</span>,   <span class="dv">10413</span>,    <span class="dv">22754</span>,    <span class="dv">11812</span>,   <span class="dv">33825</span>,    <span class="dv">12187</span>, <span class="fl">0.76567</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"MADRE DE DIOS"</span>,   <span class="dv">7841</span>,     <span class="dv">2044</span>,    <span class="dv">3165</span>,    <span class="dv">10348</span>,     <span class="dv">7700</span>,    <span class="dv">3828</span>,     <span class="dv">4515</span>, <span class="fl">0.63314</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"MOQUEGUA"</span>,        <span class="dv">7154</span>,     <span class="dv">6313</span>,   <span class="dv">11316</span>,    <span class="dv">13912</span>,    <span class="dv">13211</span>,    <span class="dv">5854</span>,    <span class="dv">11452</span>, <span class="fl">0.94983</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PASCO"</span>,          <span class="dv">19546</span>,     <span class="dv">6791</span>,    <span class="dv">4732</span>,    <span class="dv">19224</span>,    <span class="dv">12485</span>,    <span class="dv">4279</span>,     <span class="dv">9425</span>, <span class="fl">0.88529</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PIURA"</span>,         <span class="dv">177850</span>,    <span class="dv">47355</span>,   <span class="dv">60422</span>,    <span class="dv">62405</span>,    <span class="dv">48003</span>,   <span class="dv">69163</span>,    <span class="dv">30628</span>, <span class="fl">0.70820</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PUNO"</span>,           <span class="dv">24163</span>,    <span class="dv">12010</span>,   <span class="dv">25903</span>,   <span class="dv">152509</span>,   <span class="dv">109698</span>,   <span class="dv">10211</span>,    <span class="dv">70991</span>, <span class="fl">0.94760</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SAN MARTIN"</span>,     <span class="dv">73785</span>,    <span class="dv">18565</span>,   <span class="dv">14533</span>,    <span class="dv">74332</span>,    <span class="dv">35288</span>,   <span class="dv">15533</span>,    <span class="dv">13586</span>, <span class="fl">0.79597</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="st">"TACNA"</span>,          <span class="dv">14296</span>,    <span class="dv">12980</span>,   <span class="dv">23970</span>,    <span class="dv">24711</span>,    <span class="dv">30329</span>,   <span class="dv">15223</span>,    <span class="dv">20758</span>, <span class="fl">0.94236</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="st">"TUMBES"</span>,         <span class="dv">34177</span>,     <span class="dv">5956</span>,    <span class="dv">5596</span>,     <span class="dv">6916</span>,     <span class="dv">4916</span>,   <span class="dv">14964</span>,     <span class="dv">4990</span>, <span class="fl">0.90665</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="st">"UCAYALI"</span>,        <span class="dv">49699</span>,     <span class="dv">9641</span>,    <span class="dv">7882</span>,    <span class="dv">17505</span>,    <span class="dv">13486</span>,   <span class="dv">18222</span>,     <span class="dv">6680</span>, <span class="fl">0.73210</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>exterior <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">KEIKO=</span><span class="dv">15922</span>, <span class="at">ALIAGA=</span><span class="dv">27924</span>, <span class="at">NIETO=</span><span class="dv">10789</span>, <span class="at">SANCHEZ=</span><span class="dv">2490</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">BELMONT=</span><span class="dv">8957</span>, <span class="at">ALVAREZ=</span><span class="dv">10636</span>, <span class="at">LOPEZCHAU=</span><span class="dv">6945</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>urb <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>dpto,             <span class="sc">~</span>pct_urb,</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AMAZONAS"</span>,          <span class="fl">42.3</span>,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ANCASH"</span>,            <span class="fl">64.0</span>,</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="st">"APURIMAC"</span>,          <span class="fl">46.6</span>,</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AREQUIPA"</span>,          <span class="fl">91.6</span>,</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AYACUCHO"</span>,          <span class="fl">58.7</span>,</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CAJAMARCA"</span>,         <span class="fl">36.2</span>,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CALLAO"</span>,            <span class="fl">99.9</span>,</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CUSCO"</span>,             <span class="fl">60.7</span>,</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="st">"HUANCAVELICA"</span>,      <span class="fl">32.6</span>,</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="st">"HUANUCO"</span>,           <span class="fl">52.6</span>,</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ICA"</span>,               <span class="fl">92.2</span>,</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="st">"JUNIN"</span>,             <span class="fl">70.8</span>,</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LA LIBERTAD"</span>,       <span class="fl">78.9</span>,</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LAMBAYEQUE"</span>,        <span class="fl">80.9</span>,</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LIMA"</span>,              <span class="fl">98.1</span>,</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LORETO"</span>,            <span class="fl">68.9</span>,</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  <span class="st">"MADRE DE DIOS"</span>,     <span class="fl">83.1</span>,</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  <span class="st">"MOQUEGUA"</span>,          <span class="fl">87.1</span>,</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PASCO"</span>,             <span class="fl">63.5</span>,</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PIURA"</span>,             <span class="fl">79.3</span>,</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PUNO"</span>,              <span class="fl">54.0</span>,</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SAN MARTIN"</span>,        <span class="fl">68.1</span>,</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  <span class="st">"TACNA"</span>,             <span class="fl">90.0</span>,</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  <span class="st">"TUMBES"</span>,            <span class="fl">93.7</span>,</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="st">"UCAYALI"</span>,           <span class="fl">80.8</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>cands       <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"KEIKO"</span>,<span class="st">"ALIAGA"</span>,<span class="st">"NIETO"</span>,<span class="st">"SANCHEZ"</span>,<span class="st">"BELMONT"</span>,<span class="st">"ALVAREZ"</span>,<span class="st">"LOPEZCHAU"</span>)</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>total_otros <span class="ot">&lt;-</span> <span class="dv">3334813</span>   <span class="co"># suma de los 29 candidatos restantes al 86%</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> escrutinio <span class="sc">|&gt;</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(urb, <span class="at">by =</span> <span class="st">"dpto"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total =</span> <span class="fu">rowSums</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(cands))), <span class="at">urb_f =</span> pct_urb <span class="sc">/</span> <span class="dv">100</span>)</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>act           <span class="ot">&lt;-</span> <span class="fu">map_dbl</span>(cands, <span class="sc">~</span> <span class="fu">sum</span>(df[[.x]]) <span class="sc">+</span> exterior[[.x]]) <span class="sc">|&gt;</span> <span class="fu">set_names</span>(cands)</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>total_act_7   <span class="ot">&lt;-</span> <span class="fu">sum</span>(act)</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>total_act_all <span class="ot">&lt;-</span> total_act_7 <span class="sc">+</span> total_otros</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>  <span class="at">candidato =</span> <span class="fu">c</span>(<span class="st">"Keiko Fujimori"</span>,<span class="st">"López Aliaga"</span>,<span class="st">"Roberto Sánchez"</span>,<span class="st">"Jorge Nieto"</span>,</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Ricardo Belmont"</span>,<span class="st">"Carlos Álvarez"</span>,<span class="st">"Alfonso López Chau"</span>),</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>  <span class="at">partido   =</span> <span class="fu">c</span>(<span class="st">"Fuerza Popular"</span>,<span class="st">"Renovación Popular"</span>,<span class="st">"Juntos por el Perú"</span>,</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Partido del Buen Gobierno"</span>,<span class="st">"Partido Cívico Obras"</span>,</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>                <span class="st">"País para Todos"</span>,<span class="st">"Ahora Nación"</span>),</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>  <span class="at">votos     =</span> <span class="fu">as.numeric</span>(act),</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>  <span class="at">pct       =</span> <span class="fu">as.numeric</span>(act) <span class="sc">/</span> total_act_all <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(pct)) <span class="sc">|&gt;</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">votos =</span> <span class="fu">number</span>(votos, <span class="at">big.mark =</span> <span class="st">","</span>),</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>         <span class="at">pct   =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(pct, <span class="dv">2</span>), <span class="st">"%"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Candidato"</span>,<span class="st">"Partido"</span>,<span class="st">"Votos (86 % actas)"</span>,<span class="st">"% s/total validos"</span>),</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption   =</span> <span class="st">"Tabla 1. Escrutinio parcial ONPE al 86.0 %"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kst</span>(<span class="at">font_size =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Tabla 1. Escrutinio parcial ONPE al 86.0 %</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Candidato</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Partido</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Votos (86 % actas)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% s/total validos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Keiko Fujimori</td>
+<td style="text-align: left;">Fuerza Popular</td>
+<td style="text-align: left;">2,477,145</td>
+<td style="text-align: left;">16.84%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">López Aliaga</td>
+<td style="text-align: left;">Renovación Popular</td>
+<td style="text-align: left;">1,783,115</td>
+<td style="text-align: left;">12.12%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jorge Nieto</td>
+<td style="text-align: left;">Partido del Buen Gobierno</td>
+<td style="text-align: left;">1,702,390</td>
+<td style="text-align: left;">11.58%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Roberto Sánchez</td>
+<td style="text-align: left;">Juntos por el Perú</td>
+<td style="text-align: left;">1,660,599</td>
+<td style="text-align: left;">11.29%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ricardo Belmont</td>
+<td style="text-align: left;">Partido Cívico Obras</td>
+<td style="text-align: left;">1,492,107</td>
+<td style="text-align: left;">10.15%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Carlos Álvarez</td>
+<td style="text-align: left;">País para Todos</td>
+<td style="text-align: left;">1,157,594</td>
+<td style="text-align: left;">7.87%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Alfonso López Chau</td>
+<td style="text-align: left;">Ahora Nación</td>
+<td style="text-align: left;">1,098,422</td>
+<td style="text-align: left;">7.47%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Todos los porcentajes se expresan sobre el <strong>universo completo de votos válidos</strong> (incluidos los 29 candidatos restantes que suman 22.65 %), para ser directamente comparables con los conteos rápidos de Ipsos y Datum.</p>
+</blockquote>
+</section>
+<section id="candidatos-con-menor-probabilidad-de-segunda-vuelta" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="candidatos-con-menor-probabilidad-de-segunda-vuelta"><span class="header-section-number">2.2</span> Candidatos con menor probabilidad de segunda vuelta</h2>
+<p>Los 29 candidatos fuera del top 7 suman 3,334,813 votos al 86 % (22.65 % del total válido); ninguno supera individualmente el 3.5 %.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar código R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tribble</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Candidato,               <span class="sc">~</span>Partido,                    <span class="sc">~</span>Votos,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"M.S. Pérez Tello"</span>,       <span class="st">"Primero la Gente"</span>,           <span class="dv">514121</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Carlos Espá"</span>,            <span class="st">"SíCreo"</span>,                     <span class="dv">506346</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Fernando Olivera"</span>,       <span class="st">"Frente Esperanza 2021"</span>,      <span class="dv">276723</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"José Luna Gálvez"</span>,       <span class="st">"Podemos Perú"</span>,               <span class="dv">227727</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Yonhy Lescano"</span>,          <span class="st">"Cooperación Popular"</span>,        <span class="dv">196204</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"César Acuña"</span>,            <span class="st">"Alianza para el Progreso"</span>,   <span class="dv">163935</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pitter Valderrama"</span>,      <span class="st">"Partido Aprista Peruano"</span>,    <span class="dv">141023</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"George Forsyth"</span>,         <span class="st">"Somos Perú"</span>,                 <span class="dv">129813</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Herbert Caller"</span>,         <span class="st">"Patriótico del Perú"</span>,        <span class="dv">126088</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Ronald Atencio"</span>,         <span class="st">"Alianza Venceremos"</span>,         <span class="dv">124570</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Mario Vizcarra"</span>,         <span class="st">"Perú Primero"</span>,               <span class="dv">124219</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Rosario Fernández"</span>,      <span class="st">"Un Camino Diferente"</span>,        <span class="dv">109760</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Charlie Carrasco"</span>,       <span class="st">"Demócrata Unido Perú"</span>,       <span class="dv">104060</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Vladimir Cerrón"</span>,        <span class="st">"Perú Libre"</span>,                  <span class="dv">87139</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Mesías Guevara"</span>,         <span class="st">"Partido Morado"</span>,               <span class="dv">72919</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Roberto Chiabra"</span>,        <span class="st">"Unidad Nacional"</span>,              <span class="dv">60034</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Paul Jaimes"</span>,            <span class="st">"Progresemos"</span>,                  <span class="dv">58082</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Wolfgang Grozo"</span>,         <span class="st">"Integridad Democrática"</span>,       <span class="dv">56598</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Álex González"</span>,          <span class="st">"Demócrata Verde"</span>,              <span class="dv">54917</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Rafael Belaunde"</span>,        <span class="st">"Libertad Popular"</span>,             <span class="dv">35760</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">"José Williams"</span>,          <span class="st">"Avanza País"</span>,                  <span class="dv">28496</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">"F. Diez-Canseco"</span>,        <span class="st">"Perú Acción"</span>,                  <span class="dv">27327</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Fiorella Molinelli"</span>,     <span class="st">"Fuerza y Libertad"</span>,            <span class="dv">23875</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Álvaro Paz de la Barra"</span>, <span class="st">"Fe en el Perú"</span>,                <span class="dv">20264</span>,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Armando Massé"</span>,          <span class="st">"Democrático Federal"</span>,          <span class="dv">18879</span>,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Antonio Ortiz"</span>,          <span class="st">"Salvemos al Perú"</span>,             <span class="dv">15009</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Walter Chirinos"</span>,        <span class="st">"PRIN"</span>,                         <span class="dv">12469</span>,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Napoleón Becerra"</span>,       <span class="st">"PTE Perú"</span>,                      <span class="dv">9953</span>,</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Carlos Jaico"</span>,           <span class="st">"Perú Moderno"</span>,                  <span class="dv">8503</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Votos =</span> <span class="fu">number</span>(Votos, <span class="at">big.mark =</span> <span class="st">","</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Tabla 2. Candidatos fuera del top 7"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kst</span>(<span class="at">font_size =</span> <span class="dv">9</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Tabla 2. Candidatos fuera del top 7</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Candidato</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Partido</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Votos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">M.S. Pérez Tello</td>
+<td style="text-align: left;">Primero la Gente</td>
+<td style="text-align: left;">514,121</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Carlos Espá</td>
+<td style="text-align: left;">SíCreo</td>
+<td style="text-align: left;">506,346</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fernando Olivera</td>
+<td style="text-align: left;">Frente Esperanza 2021</td>
+<td style="text-align: left;">276,723</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">José Luna Gálvez</td>
+<td style="text-align: left;">Podemos Perú</td>
+<td style="text-align: left;">227,727</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Yonhy Lescano</td>
+<td style="text-align: left;">Cooperación Popular</td>
+<td style="text-align: left;">196,204</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">César Acuña</td>
+<td style="text-align: left;">Alianza para el Progreso</td>
+<td style="text-align: left;">163,935</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pitter Valderrama</td>
+<td style="text-align: left;">Partido Aprista Peruano</td>
+<td style="text-align: left;">141,023</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">George Forsyth</td>
+<td style="text-align: left;">Somos Perú</td>
+<td style="text-align: left;">129,813</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Herbert Caller</td>
+<td style="text-align: left;">Patriótico del Perú</td>
+<td style="text-align: left;">126,088</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ronald Atencio</td>
+<td style="text-align: left;">Alianza Venceremos</td>
+<td style="text-align: left;">124,570</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mario Vizcarra</td>
+<td style="text-align: left;">Perú Primero</td>
+<td style="text-align: left;">124,219</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rosario Fernández</td>
+<td style="text-align: left;">Un Camino Diferente</td>
+<td style="text-align: left;">109,760</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Charlie Carrasco</td>
+<td style="text-align: left;">Demócrata Unido Perú</td>
+<td style="text-align: left;">104,060</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Vladimir Cerrón</td>
+<td style="text-align: left;">Perú Libre</td>
+<td style="text-align: left;">87,139</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mesías Guevara</td>
+<td style="text-align: left;">Partido Morado</td>
+<td style="text-align: left;">72,919</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Roberto Chiabra</td>
+<td style="text-align: left;">Unidad Nacional</td>
+<td style="text-align: left;">60,034</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Paul Jaimes</td>
+<td style="text-align: left;">Progresemos</td>
+<td style="text-align: left;">58,082</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Wolfgang Grozo</td>
+<td style="text-align: left;">Integridad Democrática</td>
+<td style="text-align: left;">56,598</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Álex González</td>
+<td style="text-align: left;">Demócrata Verde</td>
+<td style="text-align: left;">54,917</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rafael Belaunde</td>
+<td style="text-align: left;">Libertad Popular</td>
+<td style="text-align: left;">35,760</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">José Williams</td>
+<td style="text-align: left;">Avanza País</td>
+<td style="text-align: left;">28,496</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">F. Diez-Canseco</td>
+<td style="text-align: left;">Perú Acción</td>
+<td style="text-align: left;">27,327</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fiorella Molinelli</td>
+<td style="text-align: left;">Fuerza y Libertad</td>
+<td style="text-align: left;">23,875</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Álvaro Paz de la Barra</td>
+<td style="text-align: left;">Fe en el Perú</td>
+<td style="text-align: left;">20,264</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Armando Massé</td>
+<td style="text-align: left;">Democrático Federal</td>
+<td style="text-align: left;">18,879</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Antonio Ortiz</td>
+<td style="text-align: left;">Salvemos al Perú</td>
+<td style="text-align: left;">15,009</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Walter Chirinos</td>
+<td style="text-align: left;">PRIN</td>
+<td style="text-align: left;">12,469</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Napoleón Becerra</td>
+<td style="text-align: left;">PTE Perú</td>
+<td style="text-align: left;">9,953</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Carlos Jaico</td>
+<td style="text-align: left;">Perú Moderno</td>
+<td style="text-align: left;">8,503</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="conteos-rápidos-de-referencia" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="conteos-rápidos-de-referencia"><span class="header-section-number">2.3</span> Conteos rápidos de referencia</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar código R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tribble</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Candidato,          <span class="sc">~</span><span class="st">`</span><span class="at">Ipsos / Transparencia</span><span class="st">`</span>,  <span class="sc">~</span><span class="st">`</span><span class="at">Datum / America TV</span><span class="st">`</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Keiko Fujimori"</span>,    <span class="st">"17.1 % +/- 1.0"</span>,          <span class="st">"16.8 %"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Roberto Sánchez"</span>,   <span class="st">"12.4 % +/- 1.3"</span>,           <span class="st">"9.4 %"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"López Aliaga"</span>,      <span class="st">"11.3 % +/- 1.2"</span>,           <span class="st">"12.9 %"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Jorge Nieto"</span>,       <span class="st">"10.7 % +/- 0.9"</span>,           <span class="st">"11.6 %"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Ricardo Belmont"</span>,   <span class="st">"10.2 % +/- 0.5"</span>,           <span class="st">"10.1 %"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Carlos Álvarez"</span>,     <span class="st">"8.0 % +/- 0.5"</span>,            <span class="st">"8.1 %"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"López Chau"</span>,         <span class="st">"7.4 % +/- 0.5"</span>,            <span class="st">"7.7 %"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Otros (29)"</span>,        <span class="st">"22.9 %"</span>,                    <span class="st">"23.4 %"</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Tabla 3. Conteos rapidos del 12 de abril de 2026"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kst</span>(<span class="at">font_size =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Tabla 3. Conteos rapidos del 12 de abril de 2026</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Candidato</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Ipsos / Transparencia</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Datum / America TV</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Keiko Fujimori</td>
+<td style="text-align: left;">17.1 % +/- 1.0</td>
+<td style="text-align: left;">16.8 %</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Roberto Sánchez</td>
+<td style="text-align: left;">12.4 % +/- 1.3</td>
+<td style="text-align: left;">9.4 %</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">López Aliaga</td>
+<td style="text-align: left;">11.3 % +/- 1.2</td>
+<td style="text-align: left;">12.9 %</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jorge Nieto</td>
+<td style="text-align: left;">10.7 % +/- 0.9</td>
+<td style="text-align: left;">11.6 %</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ricardo Belmont</td>
+<td style="text-align: left;">10.2 % +/- 0.5</td>
+<td style="text-align: left;">10.1 %</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Carlos Álvarez</td>
+<td style="text-align: left;">8.0 % +/- 0.5</td>
+<td style="text-align: left;">8.1 %</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">López Chau</td>
+<td style="text-align: left;">7.4 % +/- 0.5</td>
+<td style="text-align: left;">7.7 %</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Otros (29)</td>
+<td style="text-align: left;">22.9 %</td>
+<td style="text-align: left;">23.4 %</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Divergencia clave.</strong> La mayor brecha entre las empresas encuestadoras está en Sánchez (Ipsos 12.4 % vs Datum 9.4 %) y Aliaga (Datum 12.9 % vs Ipsos 11.3 %). Ipsos emplea muestreo probabilístico <strong>polietápico estratificado</strong> por región y zona urbano/rural, garantizando representación de localidades rurales donde Sánchez domina (33.8 % del voto rural según su desagregado). Datum usa muestreo aleatorio simple, que puede subrepresentar esas zonas.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="modelo-bayesiano-de-corrección-de-sesgo" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Modelo bayesiano de corrección de sesgo</h1>
+<section id="hipótesis-de-orden-de-llegada-de-actas" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="hipótesis-de-orden-de-llegada-de-actas"><span class="header-section-number">3.1</span> Hipótesis de orden de llegada de actas</h2>
+<p>Las mesas en zonas más urbanizadas —con mejor conectividad— entregan sus actas antes, sesgando el escrutinio acumulado hacia el perfil de voto urbano.</p>
+<p>Para cuantificar el sesgo se usa el porcentaje de población urbana por departamento del Censo Nacional 2017 (INEI). Para el departamento <span class="math inline">\(d\)</span> con fracción de actas contadas <span class="math inline">\(\alpha_d\)</span> y fracción urbana <span class="math inline">\(u_d\)</span>:</p>
+<p><span class="math display">\[
+\text{FUC}_d =
+\begin{cases}
+1 &amp; \text{si } \alpha_d \leq u_d \\
+u_d / \alpha_d &amp; \text{si } \alpha_d &gt; u_d
+\end{cases}
+\qquad
+\text{FRC}_d = 1 - \text{FUC}_d
+\]</span></p>
+<p>La fracción del universo aún pendiente se descompone en:</p>
+<p><span class="math display">\[
+f^{urb}_d = \max(0,\; u_d - \alpha_d)
+\qquad
+f^{rur}_d = (1 - \alpha_d) - f^{urb}_d
+\]</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar código R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">FUC        =</span> <span class="fu">if_else</span>(actas <span class="sc">&lt;=</span> urb_f, <span class="dv">1</span>, urb_f <span class="sc">/</span> actas),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">FRC        =</span> <span class="dv">1</span> <span class="sc">-</span> FUC,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">f_urb_falt =</span> <span class="fu">pmax</span>(<span class="dv">0</span>, urb_f <span class="sc">-</span> actas),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">f_rur_falt =</span> (<span class="dv">1</span> <span class="sc">-</span> actas) <span class="sc">-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, urb_f <span class="sc">-</span> actas)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(dpto, actas, pct_urb, FUC, FRC, f_urb_falt, f_rur_falt) <span class="sc">|&gt;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(FUC, FRC, f_urb_falt, f_rur_falt), <span class="sc">~</span> <span class="fu">round</span>(.x, <span class="dv">3</span>)),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">actas   =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(actas <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">"%"</span>),</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">pct_urb =</span> <span class="fu">paste0</span>(pct_urb, <span class="st">"%"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Dpto"</span>,<span class="st">"Actas"</span>,<span class="st">"% Urb"</span>,<span class="st">"FUC"</span>,<span class="st">"FRC"</span>,<span class="st">"Pend. urb"</span>,<span class="st">"Pend. rur"</span>),</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption   =</span> <span class="st">"Tabla 4. Descomposicion urbano/rural por departamento"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kst</span>(<span class="at">font_size =</span> <span class="dv">8</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Tabla 4. Descomposicion urbano/rural por departamento</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Dpto</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Actas</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% Urb</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">FUC</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">FRC</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Pend. urb</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Pend. rur</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">AMAZONAS</td>
+<td style="text-align: left;">68.4%</td>
+<td style="text-align: left;">42.3%</td>
+<td style="text-align: right;">0.619</td>
+<td style="text-align: right;">0.381</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.316</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ANCASH</td>
+<td style="text-align: left;">84.7%</td>
+<td style="text-align: left;">64%</td>
+<td style="text-align: right;">0.756</td>
+<td style="text-align: right;">0.244</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.153</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">APURIMAC</td>
+<td style="text-align: left;">89.7%</td>
+<td style="text-align: left;">46.6%</td>
+<td style="text-align: right;">0.519</td>
+<td style="text-align: right;">0.481</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.103</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AREQUIPA</td>
+<td style="text-align: left;">96%</td>
+<td style="text-align: left;">91.6%</td>
+<td style="text-align: right;">0.954</td>
+<td style="text-align: right;">0.046</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.040</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AYACUCHO</td>
+<td style="text-align: left;">93.7%</td>
+<td style="text-align: left;">58.7%</td>
+<td style="text-align: right;">0.627</td>
+<td style="text-align: right;">0.373</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.063</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CAJAMARCA</td>
+<td style="text-align: left;">77.4%</td>
+<td style="text-align: left;">36.2%</td>
+<td style="text-align: right;">0.468</td>
+<td style="text-align: right;">0.532</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.226</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CALLAO</td>
+<td style="text-align: left;">95%</td>
+<td style="text-align: left;">99.9%</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.049</td>
+<td style="text-align: right;">0.001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CUSCO</td>
+<td style="text-align: left;">91.2%</td>
+<td style="text-align: left;">60.7%</td>
+<td style="text-align: right;">0.666</td>
+<td style="text-align: right;">0.334</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.088</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HUANCAVELICA</td>
+<td style="text-align: left;">93.2%</td>
+<td style="text-align: left;">32.6%</td>
+<td style="text-align: right;">0.350</td>
+<td style="text-align: right;">0.650</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.068</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HUANUCO</td>
+<td style="text-align: left;">86.4%</td>
+<td style="text-align: left;">52.6%</td>
+<td style="text-align: right;">0.609</td>
+<td style="text-align: right;">0.391</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.136</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ICA</td>
+<td style="text-align: left;">66.9%</td>
+<td style="text-align: left;">92.2%</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.253</td>
+<td style="text-align: right;">0.078</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">JUNIN</td>
+<td style="text-align: left;">89.5%</td>
+<td style="text-align: left;">70.8%</td>
+<td style="text-align: right;">0.791</td>
+<td style="text-align: right;">0.209</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.105</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LA LIBERTAD</td>
+<td style="text-align: left;">89.2%</td>
+<td style="text-align: left;">78.9%</td>
+<td style="text-align: right;">0.885</td>
+<td style="text-align: right;">0.115</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.108</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LAMBAYEQUE</td>
+<td style="text-align: left;">90.7%</td>
+<td style="text-align: left;">80.9%</td>
+<td style="text-align: right;">0.892</td>
+<td style="text-align: right;">0.108</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.093</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LIMA</td>
+<td style="text-align: left;">92.1%</td>
+<td style="text-align: left;">98.1%</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.060</td>
+<td style="text-align: right;">0.019</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LORETO</td>
+<td style="text-align: left;">76.6%</td>
+<td style="text-align: left;">68.9%</td>
+<td style="text-align: right;">0.900</td>
+<td style="text-align: right;">0.100</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.234</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MADRE DE DIOS</td>
+<td style="text-align: left;">63.3%</td>
+<td style="text-align: left;">83.1%</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.198</td>
+<td style="text-align: right;">0.169</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MOQUEGUA</td>
+<td style="text-align: left;">95%</td>
+<td style="text-align: left;">87.1%</td>
+<td style="text-align: right;">0.917</td>
+<td style="text-align: right;">0.083</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.050</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PASCO</td>
+<td style="text-align: left;">88.5%</td>
+<td style="text-align: left;">63.5%</td>
+<td style="text-align: right;">0.717</td>
+<td style="text-align: right;">0.283</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.115</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PIURA</td>
+<td style="text-align: left;">70.8%</td>
+<td style="text-align: left;">79.3%</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.085</td>
+<td style="text-align: right;">0.207</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PUNO</td>
+<td style="text-align: left;">94.8%</td>
+<td style="text-align: left;">54%</td>
+<td style="text-align: right;">0.570</td>
+<td style="text-align: right;">0.430</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.052</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SAN MARTIN</td>
+<td style="text-align: left;">79.6%</td>
+<td style="text-align: left;">68.1%</td>
+<td style="text-align: right;">0.856</td>
+<td style="text-align: right;">0.144</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.204</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TACNA</td>
+<td style="text-align: left;">94.2%</td>
+<td style="text-align: left;">90%</td>
+<td style="text-align: right;">0.955</td>
+<td style="text-align: right;">0.045</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.058</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TUMBES</td>
+<td style="text-align: left;">90.7%</td>
+<td style="text-align: left;">93.7%</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.030</td>
+<td style="text-align: right;">0.063</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UCAYALI</td>
+<td style="text-align: left;">73.2%</td>
+<td style="text-align: left;">80.8%</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.076</td>
+<td style="text-align: right;">0.192</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="regresión-por-mínimos-cuadrados-ponderados-wls" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="regresión-por-mínimos-cuadrados-ponderados-wls"><span class="header-section-number">3.2</span> Regresión por mínimos cuadrados ponderados (WLS)</h2>
+<p>Para estimar el voto esperado en la fracción faltante se ajusta una regresión lineal ponderada por tamaño del departamento:</p>
+<p><span class="math display">\[
+p_{c,d} = \alpha_c + \beta_c \cdot u_d + \varepsilon_{c,d}
+\]</span></p>
+<p>donde <span class="math inline">\(p_{c,d}\)</span> es la fracción de voto del candidato <span class="math inline">\(c\)</span> en el departamento <span class="math inline">\(d\)</span>, <span class="math inline">\(u_d\)</span> es el porcentaje urbano y el peso es <span class="math inline">\(w_d\)</span> = total de votos del departamento. El estimador es:</p>
+<p><span class="math display">\[
+\hat{\beta}_c = (X^\top W X)^{-1} X^\top W y_c
+\]</span></p>
+<p>Un <span class="math inline">\(\beta_c &gt; 0\)</span> indica perfil urbano; <span class="math inline">\(\beta_c &lt; 0\)</span> indica perfil rural. El <span class="math inline">\(R^2\)</span> mide cuánta variación interdepartamental del voto explica la urbanización.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar código R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>wls_fit <span class="ot">&lt;-</span> <span class="cf">function</span>(cand, data) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  df_c <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">y =</span> .data[[cand]] <span class="sc">/</span> total, <span class="at">w =</span> total)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  fit  <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> urb_f, <span class="at">data =</span> df_c, <span class="at">weights =</span> w)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  s    <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">alpha =</span> <span class="fu">coef</span>(fit)[<span class="dv">1</span>], <span class="at">beta =</span> <span class="fu">coef</span>(fit)[<span class="dv">2</span>],</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">r2 =</span> s<span class="sc">$</span>r.squared, <span class="at">pval =</span> <span class="fu">coef</span>(s)[<span class="dv">2</span>, <span class="dv">4</span>])</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>coefs_list <span class="ot">&lt;-</span> <span class="fu">map</span>(cands, <span class="sc">~</span> <span class="fu">wls_fit</span>(.x, df)) <span class="sc">|&gt;</span> <span class="fu">set_names</span>(cands)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>coefs_tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">cand_id   =</span> cands,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">candidato =</span> <span class="fu">c</span>(<span class="st">"Keiko Fujimori"</span>,<span class="st">"López Aliaga"</span>,<span class="st">"Jorge Nieto"</span>,<span class="st">"Roberto Sánchez"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Ricardo Belmont"</span>,<span class="st">"Carlos Álvarez"</span>,<span class="st">"López Chau"</span>),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">alpha  =</span> <span class="fu">map_dbl</span>(coefs_list, <span class="st">"alpha"</span>),</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">beta   =</span> <span class="fu">map_dbl</span>(coefs_list, <span class="st">"beta"</span>),</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">r2     =</span> <span class="fu">map_dbl</span>(coefs_list, <span class="st">"r2"</span>),</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">pval   =</span> <span class="fu">map_dbl</span>(coefs_list, <span class="st">"pval"</span>),</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">perfil =</span> <span class="fu">case_when</span>(beta <span class="sc">&gt;</span>  <span class="fl">0.02</span> <span class="sc">~</span> <span class="st">"Urbano"</span>,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                     beta <span class="sc">&lt;</span> <span class="sc">-</span><span class="fl">0.02</span> <span class="sc">~</span> <span class="st">"Rural"</span>,</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                     <span class="cn">TRUE</span>         <span class="sc">~</span> <span class="st">"Neutro"</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>coefs_tbl <span class="sc">|&gt;</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(alpha, beta, r2), <span class="sc">~</span> <span class="fu">round</span>(.x, <span class="dv">4</span>)),</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>         <span class="at">pval =</span> scales<span class="sc">::</span><span class="fu">pvalue</span>(pval)) <span class="sc">|&gt;</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(candidato, alpha, beta, r2, pval, perfil) <span class="sc">|&gt;</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Candidato"</span>,<span class="st">"alpha"</span>,<span class="st">"beta"</span>,<span class="st">"R2"</span>,<span class="st">"p-valor"</span>,<span class="st">"Perfil"</span>),</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption   =</span> <span class="st">"Tabla 5. Coeficientes WLS"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kst</span>(<span class="at">font_size =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Tabla 5. Coeficientes WLS</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Candidato</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">alpha</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">beta</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">R2</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">p-valor</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Perfil</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Keiko Fujimori</td>
+<td style="text-align: right;">0.1194</td>
+<td style="text-align: right;">0.1201</td>
+<td style="text-align: right;">0.0744</td>
+<td style="text-align: left;">0.187</td>
+<td style="text-align: left;">Urbano</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">López Aliaga</td>
+<td style="text-align: right;">-0.1557</td>
+<td style="text-align: right;">0.3788</td>
+<td style="text-align: right;">0.7808</td>
+<td style="text-align: left;">&lt;0.001</td>
+<td style="text-align: left;">Urbano</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jorge Nieto</td>
+<td style="text-align: right;">-0.0614</td>
+<td style="text-align: right;">0.2527</td>
+<td style="text-align: right;">0.7534</td>
+<td style="text-align: left;">&lt;0.001</td>
+<td style="text-align: left;">Urbano</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Roberto Sánchez</td>
+<td style="text-align: right;">0.7289</td>
+<td style="text-align: right;">-0.7040</td>
+<td style="text-align: right;">0.9215</td>
+<td style="text-align: left;">&lt;0.001</td>
+<td style="text-align: left;">Rural</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ricardo Belmont</td>
+<td style="text-align: right;">0.2283</td>
+<td style="text-align: right;">-0.1180</td>
+<td style="text-align: right;">0.3084</td>
+<td style="text-align: left;">0.004</td>
+<td style="text-align: left;">Rural</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Carlos Álvarez</td>
+<td style="text-align: right;">-0.0085</td>
+<td style="text-align: right;">0.1341</td>
+<td style="text-align: right;">0.4705</td>
+<td style="text-align: left;">&lt;0.001</td>
+<td style="text-align: left;">Urbano</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">López Chau</td>
+<td style="text-align: right;">0.1491</td>
+<td style="text-align: right;">-0.0638</td>
+<td style="text-align: right;">0.1003</td>
+<td style="text-align: left;">0.123</td>
+<td style="text-align: left;">Rural</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar código R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>coefs_tbl <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">candidato =</span> <span class="fu">fct_reorder</span>(candidato, beta)) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> beta, <span class="at">y =</span> candidato, <span class="at">fill =</span> perfil)) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.6</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linewidth =</span> <span class="fl">0.4</span>, <span class="at">color =</span> <span class="st">"grey30"</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"R2="</span>, <span class="fu">round</span>(r2, <span class="dv">2</span>)),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">x     =</span> <span class="fu">ifelse</span>(beta <span class="sc">&gt;=</span> <span class="dv">0</span>, beta <span class="sc">+</span> <span class="fl">0.008</span>, beta <span class="sc">-</span> <span class="fl">0.008</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">hjust =</span> <span class="fu">ifelse</span>(beta <span class="sc">&gt;=</span> <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>)),</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">color =</span> <span class="st">"grey25"</span>) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Rural"</span><span class="ot">=</span><span class="st">"#1D9E75"</span>,<span class="st">"Urbano"</span><span class="ot">=</span><span class="st">"#378ADD"</span>,<span class="st">"Neutro"</span><span class="ot">=</span><span class="st">"#888780"</span>)) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.80</span>, <span class="fl">0.50</span>)) <span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title   =</span> <span class="st">"Perfil urbano/rural de cada candidato"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Coeficiente beta — WLS ponderada por tamaño departamento"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"beta (negativo = rural, positivo = urbano)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Fuente: ONPE 86 % actas, INEI Censo 2017"</span>) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_elec</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-coefs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coefs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="analisis_electoral_peru_2026_files/figure-html/fig-coefs-1.png" class="img-fluid figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coefs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Figura 1. Gradiente urbano/rural por candidato (beta WLS).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="proyección-de-votos-faltantes" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="proyección-de-votos-faltantes"><span class="header-section-number">3.3</span> Proyección de votos faltantes</h2>
+<p>El voto esperado del candidato <span class="math inline">\(c\)</span> en la fracción faltante del departamento <span class="math inline">\(d\)</span> es:</p>
+<p><span class="math display">\[
+\hat{V}^{extra}_{c,d}
+= \frac{V_d}{\alpha_d} \cdot f^{urb}_d \cdot \hat{p}^{urb}_c
++ \frac{V_d}{\alpha_d} \cdot f^{rur}_d \cdot \hat{p}^{rur}_c
+\]</span></p>
+<p>donde <span class="math inline">\(\hat{p}^{urb}_c = \text{clip}(\hat\alpha_c + \hat\beta_c)\)</span> y <span class="math inline">\(\hat{p}^{rur}_c = \text{clip}(\hat\alpha_c)\)</span>, acotando entre 0 y 1.</p>
+<p>El total proyectado agrega votos actuales, extras por departamento y el exterior (solo 2,516 votos pendientes al 31.1 % de actas escrutadas):</p>
+<p><span class="math display">\[
+\hat{V}^{final}_c = V^{act}_c
+  + \sum_{d=1}^{25} \hat{V}^{extra}_{c,d}
+  + \frac{V^{ext,act}_c}{V^{ext,act}_{total}} \times 2{,}516
+\]</span></p>
+<p>Los porcentajes se expresan sobre el universo completo asumiendo que los 29 candidatos restantes mantienen su participación observada (22.65 %):</p>
+<p><span class="math display">\[
+\hat{p}^{final}_c
+= \frac{\hat{V}^{final}_c}{\hat{V}^{final}_{top7} \;/\; (1 - 0.2265)}
+\]</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar código R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ext_act   <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">KEIKO=</span><span class="dv">15922</span>, <span class="at">ALIAGA=</span><span class="dv">27924</span>, <span class="at">NIETO=</span><span class="dv">10789</span>, <span class="at">SANCHEZ=</span><span class="dv">2490</span>,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">BELMONT=</span><span class="dv">8957</span>, <span class="at">ALVAREZ=</span><span class="dv">10636</span>, <span class="at">LOPEZCHAU=</span><span class="dv">6945</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ext_total <span class="ot">&lt;-</span> <span class="fu">sum</span>(ext_act)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>ext_falt  <span class="ot">&lt;-</span> <span class="dv">86179</span>L <span class="sc">-</span> ext_total   <span class="co"># 2,516 votos reales pendientes</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>ve <span class="ot">&lt;-</span> <span class="fu">setNames</span>(<span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(cands)), cands)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(df))) {</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  r     <span class="ot">&lt;-</span> df[i, ]</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  v_tot <span class="ot">&lt;-</span> r<span class="sc">$</span>total <span class="sc">/</span> r<span class="sc">$</span>actas</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  v_urb <span class="ot">&lt;-</span> v_tot <span class="sc">*</span> r<span class="sc">$</span>f_urb_falt</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  v_rur <span class="ot">&lt;-</span> v_tot <span class="sc">*</span> r<span class="sc">$</span>f_rur_falt</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (c <span class="cf">in</span> cands) {</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    pu    <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="dv">0</span>, <span class="fu">min</span>(<span class="dv">1</span>, coefs_list[[c]]<span class="sc">$</span>alpha <span class="sc">+</span> coefs_list[[c]]<span class="sc">$</span>beta))</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    pr    <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="dv">0</span>, <span class="fu">min</span>(<span class="dv">1</span>, coefs_list[[c]]<span class="sc">$</span>alpha))</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    ve[c] <span class="ot">&lt;-</span> ve[c] <span class="sc">+</span> v_urb <span class="sc">*</span> pu <span class="sc">+</span> v_rur <span class="sc">*</span> pr</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (c <span class="cf">in</span> cands) ve[c] <span class="ot">&lt;-</span> ve[c] <span class="sc">+</span> ext_act[c] <span class="sc">/</span> ext_total <span class="sc">*</span> ext_falt</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>fin          <span class="ot">&lt;-</span> act <span class="sc">+</span> ve</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>gran_fin7    <span class="ot">&lt;-</span> <span class="fu">sum</span>(fin)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>pct_otros    <span class="ot">&lt;-</span> total_otros <span class="sc">/</span> total_act_all</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>gran_fin_all <span class="ot">&lt;-</span> gran_fin7 <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> pct_otros)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>proj_tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">cand_id   =</span> cands,</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">candidato =</span> <span class="fu">c</span>(<span class="st">"Keiko Fujimori"</span>,<span class="st">"López Aliaga"</span>,<span class="st">"Jorge Nieto"</span>,<span class="st">"Roberto Sánchez"</span>,</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Ricardo Belmont"</span>,<span class="st">"Carlos Álvarez"</span>,<span class="st">"López Chau"</span>),</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">votos_act =</span> <span class="fu">as.numeric</span>(act),</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">pct_act   =</span> <span class="fu">as.numeric</span>(act) <span class="sc">/</span> total_act_all <span class="sc">*</span> <span class="dv">100</span>,</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">votos_fin =</span> <span class="fu">as.numeric</span>(fin),</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">pct_fin   =</span> <span class="fu">as.numeric</span>(fin) <span class="sc">/</span> gran_fin_all <span class="sc">*</span> <span class="dv">100</span>,</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">delta     =</span> pct_fin <span class="sc">-</span> pct_act</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(pct_fin))</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>proj_tbl <span class="sc">|&gt;</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">votos_act =</span> <span class="fu">number</span>(<span class="fu">round</span>(votos_act), <span class="at">big.mark =</span> <span class="st">","</span>),</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>         <span class="at">votos_fin =</span> <span class="fu">number</span>(<span class="fu">round</span>(votos_fin), <span class="at">big.mark =</span> <span class="st">","</span>),</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>         <span class="at">pct_act   =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(pct_act, <span class="dv">2</span>), <span class="st">"%"</span>),</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>         <span class="at">pct_fin   =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(pct_fin, <span class="dv">2</span>), <span class="st">"%"</span>),</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>         <span class="at">delta     =</span> <span class="fu">ifelse</span>(delta <span class="sc">&gt;</span> <span class="dv">0</span>,</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">paste0</span>(<span class="st">"+"</span>, <span class="fu">round</span>(delta, <span class="dv">2</span>), <span class="st">" pp"</span>),</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">paste0</span>(<span class="fu">round</span>(delta, <span class="dv">2</span>), <span class="st">" pp"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>cand_id) <span class="sc">|&gt;</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Candidato"</span>,<span class="st">"Votos act."</span>,<span class="st">"% act."</span>,</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Votos proy."</span>,<span class="st">"% proy."</span>,<span class="st">"Delta"</span>),</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption   =</span> <span class="st">"Tabla 6. Proyeccion bayesiana sobre universo completo de votos validos"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kst</span>(<span class="at">font_size =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Tabla 6. Proyeccion bayesiana sobre universo completo de votos validos</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Candidato</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Votos act.</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% act.</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Votos proy.</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% proy.</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Delta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Keiko Fujimori</td>
+<td style="text-align: left;">2,477,145</td>
+<td style="text-align: left;">16.84%</td>
+<td style="text-align: left;">2,720,403</td>
+<td style="text-align: left;">16.01%</td>
+<td style="text-align: left;">-0.83 pp</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Roberto Sánchez</td>
+<td style="text-align: left;">1,702,390</td>
+<td style="text-align: left;">11.58%</td>
+<td style="text-align: left;">2,466,918</td>
+<td style="text-align: left;">14.52%</td>
+<td style="text-align: left;">+2.94 pp</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">López Aliaga</td>
+<td style="text-align: left;">1,783,115</td>
+<td style="text-align: left;">12.12%</td>
+<td style="text-align: left;">1,895,403</td>
+<td style="text-align: left;">11.16%</td>
+<td style="text-align: left;">-0.97 pp</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ricardo Belmont</td>
+<td style="text-align: left;">1,492,107</td>
+<td style="text-align: left;">10.15%</td>
+<td style="text-align: left;">1,783,031</td>
+<td style="text-align: left;">10.49%</td>
+<td style="text-align: left;">+0.35 pp</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jorge Nieto</td>
+<td style="text-align: left;">1,660,599</td>
+<td style="text-align: left;">11.29%</td>
+<td style="text-align: left;">1,756,462</td>
+<td style="text-align: left;">10.34%</td>
+<td style="text-align: left;">-0.95 pp</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">López Chau</td>
+<td style="text-align: left;">1,098,422</td>
+<td style="text-align: left;">7.47%</td>
+<td style="text-align: left;">1,295,049</td>
+<td style="text-align: left;">7.62%</td>
+<td style="text-align: left;">+0.15 pp</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Carlos Álvarez</td>
+<td style="text-align: left;">1,157,594</td>
+<td style="text-align: left;">7.87%</td>
+<td style="text-align: left;">1,220,621</td>
+<td style="text-align: left;">7.18%</td>
+<td style="text-align: left;">-0.69 pp</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="intervalos-de-confianza-por-bootstrap" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="intervalos-de-confianza-por-bootstrap"><span class="header-section-number">3.4</span> Intervalos de confianza por bootstrap</h2>
+<p>Se aplica <strong>bootstrap no paramétrico</strong> con 2,000 iteraciones sobre los departamentos. En cada iteración se remuestrea con reposición la tabla de 25 departamentos, se reestima la WLS y se recalculan los votos proyectados. Los percentiles 5 % y 95 % definen el <strong>intervalo de confianza al 90 %</strong>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar código R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>B    <span class="ot">&lt;-</span> <span class="dv">2000</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>n    <span class="ot">&lt;-</span> <span class="fu">nrow</span>(df)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>boot <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA_real_</span>, B, <span class="fu">length</span>(cands), <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="cn">NULL</span>, cands))</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (b <span class="cf">in</span> <span class="fu">seq_len</span>(B)) {</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  db      <span class="ot">&lt;-</span> df[<span class="fu">sample</span>(n, n, <span class="at">replace =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  coefs_b <span class="ot">&lt;-</span> <span class="fu">map</span>(cands, <span class="cf">function</span>(c) {</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    df_c <span class="ot">&lt;-</span> db <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">y =</span> .data[[c]] <span class="sc">/</span> total, <span class="at">w =</span> total)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tryCatch</span>({</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>      fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> urb_f, <span class="at">data =</span> df_c, <span class="at">weights =</span> w)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">list</span>(<span class="at">alpha =</span> <span class="fu">coef</span>(fit)[<span class="dv">1</span>], <span class="at">beta =</span> <span class="fu">coef</span>(fit)[<span class="dv">2</span>])</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">error =</span> <span class="cf">function</span>(e) coefs_list[[c]])</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  }) <span class="sc">|&gt;</span> <span class="fu">set_names</span>(cands)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  ve_b <span class="ot">&lt;-</span> <span class="fu">setNames</span>(<span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(cands)), cands)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(df))) {</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    r     <span class="ot">&lt;-</span> df[i, ]</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    v_tot <span class="ot">&lt;-</span> r<span class="sc">$</span>total <span class="sc">/</span> r<span class="sc">$</span>actas</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    v_urb <span class="ot">&lt;-</span> v_tot <span class="sc">*</span> r<span class="sc">$</span>f_urb_falt</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    v_rur <span class="ot">&lt;-</span> v_tot <span class="sc">*</span> r<span class="sc">$</span>f_rur_falt</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (c <span class="cf">in</span> cands) {</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>      pu      <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="dv">0</span>, <span class="fu">min</span>(<span class="dv">1</span>, coefs_b[[c]]<span class="sc">$</span>alpha <span class="sc">+</span> coefs_b[[c]]<span class="sc">$</span>beta))</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>      pr      <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="dv">0</span>, <span class="fu">min</span>(<span class="dv">1</span>, coefs_b[[c]]<span class="sc">$</span>alpha))</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>      ve_b[c] <span class="ot">&lt;-</span> ve_b[c] <span class="sc">+</span> v_urb <span class="sc">*</span> pu <span class="sc">+</span> v_rur <span class="sc">*</span> pr</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (c <span class="cf">in</span> cands) ve_b[c] <span class="ot">&lt;-</span> ve_b[c] <span class="sc">+</span> ext_act[c] <span class="sc">/</span> ext_total <span class="sc">*</span> ext_falt</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>  fin_b      <span class="ot">&lt;-</span> act <span class="sc">+</span> ve_b</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  gran_b_all <span class="ot">&lt;-</span> <span class="fu">sum</span>(fin_b) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> pct_otros)</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>  boot[b, ]  <span class="ot">&lt;-</span> fin_b <span class="sc">/</span> gran_b_all <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>ic_tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">cand_id   =</span> cands,</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">candidato =</span> <span class="fu">c</span>(<span class="st">"Keiko Fujimori"</span>,<span class="st">"López Aliaga"</span>,<span class="st">"Jorge Nieto"</span>,<span class="st">"Roberto Sánchez"</span>,</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Ricardo Belmont"</span>,<span class="st">"Carlos Álvarez"</span>,<span class="st">"López Chau"</span>),</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">pct_fin   =</span> <span class="fu">as.numeric</span>(fin) <span class="sc">/</span> gran_fin_all <span class="sc">*</span> <span class="dv">100</span>,</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">ic_lo     =</span> <span class="fu">apply</span>(boot, <span class="dv">2</span>, quantile, <span class="fl">0.05</span>),</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">ic_hi     =</span> <span class="fu">apply</span>(boot, <span class="dv">2</span>, quantile, <span class="fl">0.95</span>)</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(pct_fin))</span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>ic_tbl <span class="sc">|&gt;</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct_fin =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(pct_fin, <span class="dv">2</span>), <span class="st">"%"</span>),</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>         <span class="at">ic      =</span> <span class="fu">paste0</span>(<span class="st">"["</span>, <span class="fu">round</span>(ic_lo, <span class="dv">2</span>), <span class="st">"% - "</span>, <span class="fu">round</span>(ic_hi, <span class="dv">2</span>), <span class="st">"%]"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(candidato, pct_fin, ic) <span class="sc">|&gt;</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Candidato"</span>,<span class="st">"% proyectado"</span>,<span class="st">"IC 90 % bootstrap"</span>),</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption   =</span> <span class="st">"Tabla 7. Proyeccion bayesiana con intervalos de confianza al 90 %"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kst</span>(<span class="at">font_size =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Tabla 7. Proyeccion bayesiana con intervalos de confianza al 90 %</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Candidato</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">% proyectado</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">IC 90 % bootstrap</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Keiko Fujimori</td>
+<td style="text-align: left;">16.01%</td>
+<td style="text-align: left;">[15.45% - 16.59%]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Roberto Sánchez</td>
+<td style="text-align: left;">14.52%</td>
+<td style="text-align: left;">[14.08% - 14.84%]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">López Aliaga</td>
+<td style="text-align: left;">11.16%</td>
+<td style="text-align: left;">[10.92% - 11.22%]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ricardo Belmont</td>
+<td style="text-align: left;">10.49%</td>
+<td style="text-align: left;">[10.19% - 10.88%]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jorge Nieto</td>
+<td style="text-align: left;">10.34%</td>
+<td style="text-align: left;">[10.25% - 10.44%]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">López Chau</td>
+<td style="text-align: left;">7.62%</td>
+<td style="text-align: left;">[7.27% - 8.06%]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Carlos Álvarez</td>
+<td style="text-align: left;">7.18%</td>
+<td style="text-align: left;">[7.13% - 7.37%]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="validación-contra-conteos-rápidos" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Validación contra conteos rápidos</h1>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar código R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ref <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>candidato,          <span class="sc">~</span>ipsos, <span class="sc">~</span>me_i, <span class="sc">~</span>datum, <span class="sc">~</span>me_d,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Keiko Fujimori"</span>,     <span class="fl">17.1</span>,   <span class="fl">1.0</span>,   <span class="fl">16.8</span>,   <span class="fl">1.0</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Roberto Sánchez"</span>,    <span class="fl">12.4</span>,   <span class="fl">1.3</span>,    <span class="fl">9.4</span>,   <span class="fl">1.0</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"López Aliaga"</span>,       <span class="fl">11.3</span>,   <span class="fl">1.2</span>,   <span class="fl">12.9</span>,   <span class="fl">1.0</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Jorge Nieto"</span>,        <span class="fl">10.7</span>,   <span class="fl">0.9</span>,   <span class="fl">11.6</span>,   <span class="fl">1.0</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Ricardo Belmont"</span>,    <span class="fl">10.2</span>,   <span class="fl">0.5</span>,   <span class="fl">10.1</span>,   <span class="fl">1.0</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Carlos Álvarez"</span>,      <span class="fl">8.0</span>,   <span class="fl">0.5</span>,    <span class="fl">8.1</span>,   <span class="fl">1.0</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"López Chau"</span>,          <span class="fl">7.4</span>,   <span class="fl">0.5</span>,    <span class="fl">7.7</span>,   <span class="fl">1.0</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>val <span class="ot">&lt;-</span> ic_tbl <span class="sc">|&gt;</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(ref, <span class="at">by =</span> <span class="st">"candidato"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">candidato =</span> <span class="fu">fct_reorder</span>(candidato, pct_fin))</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>val_long <span class="ot">&lt;-</span> val <span class="sc">|&gt;</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="fu">c</span>(pct_fin, ipsos, datum), <span class="at">names_to =</span> <span class="st">"fuente"</span>, <span class="at">values_to =</span> <span class="st">"pct"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fuente =</span> <span class="fu">recode</span>(fuente,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct_fin =</span> <span class="st">"Modelo bayesiano"</span>,</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">ipsos   =</span> <span class="st">"Ipsos / Transparencia"</span>,</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">datum   =</span> <span class="st">"Datum / America TV"</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(val, <span class="fu">aes</span>(<span class="at">y =</span> candidato)) <span class="sc">+</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rect</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> ic_lo, <span class="at">xmax =</span> ic_hi,</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymin =</span> <span class="fu">as.numeric</span>(candidato) <span class="sc">-</span> <span class="fl">0.44</span>,</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymax =</span> <span class="fu">as.numeric</span>(candidato) <span class="sc">+</span> <span class="fl">0.44</span>),</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>            <span class="at">fill =</span> <span class="st">"#533AB7"</span>, <span class="at">alpha =</span> <span class="fl">0.10</span>) <span class="sc">+</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rect</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> ipsos <span class="sc">-</span> me_i, <span class="at">xmax =</span> ipsos <span class="sc">+</span> me_i,</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymin =</span> <span class="fu">as.numeric</span>(candidato) <span class="sc">-</span> <span class="fl">0.28</span>,</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymax =</span> <span class="fu">as.numeric</span>(candidato) <span class="sc">+</span> <span class="fl">0.28</span>),</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>            <span class="at">fill =</span> <span class="st">"#D85A30"</span>, <span class="at">alpha =</span> <span class="fl">0.18</span>) <span class="sc">+</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rect</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> datum <span class="sc">-</span> me_d, <span class="at">xmax =</span> datum <span class="sc">+</span> me_d,</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymin =</span> <span class="fu">as.numeric</span>(candidato) <span class="sc">-</span> <span class="fl">0.14</span>,</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>                <span class="at">ymax =</span> <span class="fu">as.numeric</span>(candidato) <span class="sc">+</span> <span class="fl">0.14</span>),</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>            <span class="at">fill =</span> <span class="st">"#0F6E56"</span>, <span class="at">alpha =</span> <span class="fl">0.22</span>) <span class="sc">+</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> val_long,</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> pct, <span class="at">color =</span> fuente, <span class="at">shape =</span> fuente), <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Modelo bayesiano"</span>      <span class="ot">=</span> <span class="st">"#533AB7"</span>,</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Ipsos / Transparencia"</span> <span class="ot">=</span> <span class="st">"#D85A30"</span>,</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Datum / America TV"</span>    <span class="ot">=</span> <span class="st">"#0F6E56"</span>)) <span class="sc">+</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">15</span>)) <span class="sc">+</span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> <span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>, <span class="at">accuracy =</span> <span class="dv">1</span>),</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">21</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">6</span>, <span class="dv">20</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"Proyeccion bayesiana vs conteos rapidos"</span>,</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Todos los porcentajes sobre universo completo de votos validos"</span>,</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"% de votos validos"</span>, <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption  =</span> <span class="st">"Fuentes: ONPE 86 % actas (14 abr 2026), INEI Censo 2017, Ipsos/Transparencia, Datum/America TV"</span>) <span class="sc">+</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_elec</span>() <span class="sc">+</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-validacion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-validacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="analisis_electoral_peru_2026_files/figure-html/fig-validacion-1.png" class="img-fluid figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-validacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Figura 2. Proyeccion bayesiana vs conteos rapidos. Franja ancha = IC 90 %. Franjas medias = margenes de error declarados.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="resultados-y-conclusiones" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Resultados y conclusiones</h1>
+<section id="proyección-final" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="proyección-final"><span class="header-section-number">5.1</span> Proyección final</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar código R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">&lt;-</span> proj_tbl <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(ic_tbl <span class="sc">|&gt;</span> <span class="fu">select</span>(cand_id, ic_lo, ic_hi), <span class="at">by =</span> <span class="st">"cand_id"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">candidato =</span> <span class="fu">fct_reorder</span>(candidato, pct_fin))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_df) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> pct_act, <span class="at">y =</span> candidato),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> <span class="st">"grey82"</span>, <span class="at">width =</span> <span class="fl">0.72</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> pct_fin, <span class="at">y =</span> candidato, <span class="at">fill =</span> cand_id), <span class="at">width =</span> <span class="fl">0.40</span>) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbarh</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> ic_lo, <span class="at">xmax =</span> ic_hi, <span class="at">y =</span> candidato),</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">height =</span> <span class="fl">0.22</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>, <span class="at">color =</span> <span class="st">"grey25"</span>) <span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> pct_fin <span class="sc">+</span> <span class="fl">0.3</span>, <span class="at">y =</span> candidato,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(pct_fin, <span class="dv">1</span>), <span class="st">"%"</span>)),</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="fl">3.3</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"grey20"</span>) <span class="sc">+</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> colores, <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> <span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">1</span>, <span class="at">accuracy =</span> <span class="dv">1</span>),</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>                     <span class="at">expand  =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.14</span>))) <span class="sc">+</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"Escrutinio parcial (86 %) vs proyeccion bayesiana"</span>,</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Barras grises = actual, barras coloreadas = proyeccion, segmentos = IC 90 %"</span>,</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"% sobre universo completo de votos validos"</span>, <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption  =</span> <span class="st">"Modelo WLS, prior % urbano INEI 2017, bootstrap 2,000 iter. Punto de corte: 14 abr 2026, 86.0 % actas"</span>) <span class="sc">+</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_elec</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-final" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="analisis_electoral_peru_2026_files/figure-html/fig-final-1.png" class="img-fluid figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Figura 3. Escrutinio parcial (barras grises) vs proyeccion bayesiana (coloreadas) con IC 90 %.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="síntesis-de-hallazgos" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="síntesis-de-hallazgos"><span class="header-section-number">5.2</span> Síntesis de hallazgos</h2>
+<p><strong>1. Con el 86 % de actas el modelo converge claramente hacia los conteos rápidos.</strong> Para Keiko, Belmont y Nieto la proyección es casi exacta respecto a Ipsos. Esto valida que la hipótesis de orden de llegada de actas captura correctamente el sesgo urbano del escrutinio parcial.</p>
+<p><strong>2. Sánchez mantiene el mayor sesgo de subestimación.</strong> Con beta = -0.704 y R2 = 0.922, la urbanización explica casi perfectamente su voto. El modelo lo proyecta en 14.52 %, frente al 11.58 % actual y al 12.4 % de Ipsos. La diferencia residual con Ipsos puede explicarse porque aún quedan actas rurales pendientes en Cajamarca (77.4 % contado), Piura (70.8 %), Loreto (76.6 %) y otros departamentos donde Sánchez domina.</p>
+<p><strong>3. El voto exterior es ya marginal.</strong> Con el 31.1 % de actas del exterior escrutadas, quedan solo 2,516 votos pendientes, sin impacto significativo en ningún candidato.</p>
+<p><strong>4. Aliaga converge con Ipsos.</strong> El modelo proyecta 11.16 %, prácticamente idéntico al 11.3 % de Ipsos, confirmando que su sobreestimación inicial en el escrutinio parcial era efecto del sesgo urbano.</p>
+<p><strong>5. La segunda vuelta es Keiko vs Sánchez con alta confianza estadística.</strong> Los IC 90 % del modelo no solapan entre Sánchez (14.10 % - 14.84 %) y Aliaga (10.94 % - 11.22 %), separándolos por más de 3 puntos. Datum sigue siendo el outlier, con Sánchez en 9.4 %, diferencia atribuible a su menor cobertura de mesas rurales.</p>
+<p><strong>6. Los 29 candidatos restantes no tienen opciones de segunda vuelta.</strong> Ninguno supera el 3.5 % del total de votos válidos al 86 % de actas.</p>
+<hr>
+</section>
+</section>
+<section id="limitaciones-del-modelo" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Limitaciones del modelo</h1>
+<ul>
+<li><strong>Hipótesis de orden de llegada.</strong> Se asume que las actas llegan en orden urbano a rural. En la práctica puede variar por factores logísticos.</li>
+<li><strong>Linealidad.</strong> La relación voto-urbanización se modela como lineal.</li>
+<li><strong>Datos censales de 2017.</strong> La distribución urbano/rural pudo cambiar entre 2017 y 2026.</li>
+<li><strong>Los 29 candidatos restantes se asumen estables.</strong> Su participación se proyecta proporcional a la observada al momento del corte.</li>
+<li><strong>Voto exterior.</strong> Con solo 2,516 votos pendientes al 31.1 % de actas escrutadas, su impacto en la proyección final es negligible.</li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
